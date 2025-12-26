@@ -8,6 +8,32 @@ A sophisticated, modular system where two distinct Large Language Models compete
 
 The AI Battle Arena is designed as a research observatory for watching LLMs interact, compete, and demonstrate their reasoning processes in real-time. It's not a simple game - it's a controlled environment for studying AI behavior, hallucination patterns, and strategic reasoning.
 
+## 📸 Screenshots
+
+### Main Application View
+
+![Full Application View](screenshots/full-app-view.png)
+
+The complete interface with game board, director controls, battle feed, and settings panel.
+
+### Clean Interface
+
+![Clean Interface View](screenshots/app-clean-view.png)
+
+Settings panel collapsed for focused battle monitoring.
+
+### Battle Feed
+
+![Battle Feed View](screenshots/battle-feed-view.png)
+
+Real-time log display with filtering and search capabilities.
+
+### Telemetry Panel
+
+![Telemetry Panel](screenshots/telemetry-panel.png)
+
+Comprehensive metrics and performance visualization.
+
 ### Core Features
 
 - **Modular LLM Provider System**: Provider-agnostic architecture supporting OpenAI, Anthropic, Ollama, Groq, and xAI
@@ -303,8 +329,8 @@ export class CustomAdapter extends ProviderAdapter {
 }
 
 // 2. Register in registry
-import { providerRegistry } from './providers/registry.js';
-providerRegistry.registerProvider('custom', CustomAdapter);
+import { providerRegistry } from "./providers/registry.js";
+providerRegistry.registerProvider("custom", CustomAdapter);
 ```
 
 ### Adding New Games
@@ -312,8 +338,12 @@ providerRegistry.registerProvider('custom', CustomAdapter);
 ```javascript
 // 1. Create validator
 export class GameValidator {
-  validateMove(move) { /* ... */ }
-  getGameState() { /* ... */ }
+  validateMove(move) {
+    /* ... */
+  }
+  getGameState() {
+    /* ... */
+  }
 }
 
 // 2. Update context builder for game-specific prompts
