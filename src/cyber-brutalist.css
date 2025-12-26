@@ -1,0 +1,469 @@
+/**
+ * CYBER-BRUTALIST OBSERVATORY STYLES
+ * High-density, high-contrast, unapologetically technical
+ */
+
+/* ============================================
+   GLOBAL OBSIDIAN BACKGROUND
+   =========================================== */
+:root {
+  color-scheme: dark;
+  background-color: #020202;
+}
+
+body {
+  background-color: #020202;
+  color: #f5f5f7;
+  font-family: "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Subtle noise texture overlay */
+.observatory-background {
+  position: relative;
+  background-color: #020202;
+}
+
+.observatory-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22256%22 height=%22256%22 fill=%22transparent%22/%3E%3Crect width=%22256%22 height=%22256%22 filter=%22url(%23noise)%22 opacity=%220.03%22/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scanline overlay */
+.observatory-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(6, 182, 212, 0.03) 2px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================
+   BRUTALIST 1PX BORDERS
+   =========================================== */
+.brutalist-border {
+  border: 1px solid rgba(245, 245, 247, 0.2);
+  box-shadow: 0 0 0 0 rgba(245, 245, 247, 0.05);
+}
+
+.brutalist-border-cyan {
+  border: 1px solid #06b6d4;
+  box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.1);
+}
+
+.brutalist-border-vermilion {
+  border: 1px solid #ff4444;
+  box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.1);
+}
+
+/* Sharp 90-degree corners */
+.brutalist-box {
+  border: 1px solid rgba(245, 245, 247, 0.2);
+  background-color: rgba(5, 5, 5, 0.3);
+  border-radius: 0;
+}
+
+/* ============================================
+   NEURAL STREAM (THE DUAL-LOG)
+   =========================================== */
+
+/* Layer 1: The Whisper - Internal Monologue */
+.whisper-layer {
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-size: 0.875rem;
+  color: rgba(6, 182, 212, 0.4);
+  font-style: italic;
+  line-height: 1.6;
+  opacity: 0;
+  animation: typewriter 0.05s steps(1) forwards;
+}
+
+.whisper-layer.visible {
+  opacity: 0.4;
+}
+
+/* Typewriter effect for whisper characters */
+@keyframes typewriter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+}
+
+/* Layer 2: The Shout - Public Trash Talk */
+.shout-layer {
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-size: 0.9rem;
+  color: #f5f5f7;
+  font-weight: 700;
+  padding: 1rem;
+  background-color: rgba(5, 5, 5, 0.5);
+  border: 1px solid rgba(245, 245, 247, 0.3);
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.shout-layer.move-impact {
+  animation: shake 0.3s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+/* ============================================
+   GAME STAGE - GRID OF LIGHT
+   =========================================== */
+.game-stage {
+  position: relative;
+  background: linear-gradient(135deg, #020202 0%, #050505 100%);
+  border: 1px solid rgba(245, 245, 247, 0.15);
+  padding: 2rem;
+  display: grid;
+  gap: 1px;
+}
+
+/* Glowing pieces */
+.game-piece {
+  position: relative;
+  transition: all 0.3s ease-out;
+}
+
+.game-piece.glow-cyan {
+  filter: drop-shadow(0 0 4px #06b6d4)
+    drop-shadow(0 0 8px rgba(6, 182, 212, 0.4));
+}
+
+.game-piece.glow-vermilion {
+  filter: drop-shadow(0 0 4px #ff4444)
+    drop-shadow(0 0 8px rgba(255, 68, 68, 0.4));
+}
+
+.game-piece.last-move {
+  filter: drop-shadow(0 0 6px #06b6d4)
+    drop-shadow(0 0 12px rgba(6, 182, 212, 0.6));
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Pathfinding: Path of Intent */
+.path-intent {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.path-intent.visible {
+  opacity: 0.6;
+}
+
+.path-intent-arrow {
+  width: 4px;
+  height: 4px;
+  background-color: #06b6d4;
+  position: absolute;
+}
+
+/* ============================================
+   DIRECTOR HUD - SLIDE-OUT TRAYS
+   =========================================== */
+.director-hud {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 400px;
+  background-color: rgba(2, 2, 2, 0.95);
+  border-left: 1px solid rgba(245, 245, 247, 0.2);
+  backdrop-filter: blur(10px);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.director-hud.open {
+  transform: translateX(0);
+}
+
+/* Glass-morphism for Prompt Peek */
+.prompt-peek {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  background: rgba(2, 2, 2, 0.85);
+  border: 1px solid rgba(245, 245, 247, 0.2);
+  backdrop-filter: blur(20px);
+  padding: 1.5rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease-out;
+}
+
+.prompt-peek.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tactical Speed Control Slider */
+.speed-control-tactical {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: rgba(245, 245, 247, 0.1);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.speed-control-tactical::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #06b6d4, #ff4444);
+  transform: translateY(-50%);
+  transition: width 0.3s ease-out;
+}
+
+/* Persona Sliders */
+.persona-slider {
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: rgba(245, 245, 247, 0.1);
+  outline: none;
+  border-radius: 0;
+}
+
+.persona-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #06b6d4;
+  cursor: pointer;
+  border-radius: 0;
+  border: 2px solid #020202;
+}
+
+.persona-slider::-moz-range-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #06b6d4;
+  cursor: pointer;
+  border-radius: 0;
+  border: 2px solid #020202;
+}
+
+/* ============================================
+   INTERACTION & MOTION
+   =========================================== */
+
+/* Neural Pulse: When model is thinking */
+.thinking-pulse {
+  position: relative;
+  overflow: hidden;
+}
+
+.thinking-pulse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    transparent 0%,
+    rgba(6, 182, 212, 0.05) 100%
+  );
+  animation: scanline 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Glitch Transition: Turn swap between models */
+.glitch-transition {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Move Impact: Screen shake on captures */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-2px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+/* ============================================
+   FLUID GRID LAYOUT
+   =========================================== */
+.fluid-grid {
+  display: grid;
+  grid-template-columns: minmax(350px, 1fr) minmax(400px, 1fr) minmax(
+      350px,
+      1fr
+    );
+  grid-template-rows: 1fr;
+  gap: 1px;
+  background-color: rgba(245, 245, 247, 0.1);
+  min-height: 100vh;
+}
+
+/* Mobile: Vertically stacked */
+@media (max-width: 1024px) {
+  .fluid-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+}
+
+/* ============================================
+   MONO-CHARACTER BACKGROUND NOISE
+   =========================================== */
+.mono-background-noise {
+  position: relative;
+}
+
+.mono-background-noise::before {
+  content: "█ ▓ ▒ ░ ▒ ▓ ░ ▓ ▒ ░ ▒ ▓ ▒ ░ ▓ ▒ ░ ▓ ▒ ░";
+  position: absolute;
+  inset: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.5rem;
+  color: rgba(245, 245, 247, 0.02);
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* ============================================
+   GLOW EFFECTS
+   =========================================== */
+@keyframes glow {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   BRUTALIST TERMINAL STYLING
+   =========================================== */
+.terminal-window {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(245, 245, 247, 0.3);
+  padding: 1rem;
+  font-family: "JetBrains Mono", monospace;
+  color: #f5f5f7;
+}
+
+.terminal-prompt {
+  color: #06b6d4;
+  font-weight: bold;
+}
+
+.terminal-output {
+  color: rgba(245, 245, 247, 0.8);
+}
+
+/* ============================================
+   CYBER-BRUTALIST UTILITY CLASSES
+   =========================================== */
+.text-ghost {
+  color: #f5f5f7;
+}
+
+.text-ghost-50 {
+  color: rgba(245, 245, 247, 0.5);
+}
+
+.text-cyan {
+  color: #06b6d4;
+}
+
+.text-vermilion {
+  color: #ff4444;
+}
+
+.bg-obsidian {
+  background-color: #020202;
+}
+
+.bg-void {
+  background-color: #050505;
+}
+
+.bg-slate-900 {
+  background-color: #0a0a0a;
+}
+
+/* Micro-border utility */
+.micro-border {
+  border: 1px solid rgba(245, 245, 247, 0.1);
+}
+
+/* Sharp corners */
+.sharp-corners {
+  border-radius: 0;
+}
