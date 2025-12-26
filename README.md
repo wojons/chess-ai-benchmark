@@ -34,6 +34,10 @@ Real-time log display with filtering and search capabilities.
 
 Comprehensive metrics and performance visualization.
 
+---
+
+**Note**: For live screenshots, visit the [GitHub repository](https://github.com/wojons/chess-ai-benchmark) to view all screenshots.
+
 ### Core Features
 
 - **Modular LLM Provider System**: Provider-agnostic architecture supporting OpenAI, Anthropic, Ollama, Groq, and xAI
