@@ -36,7 +36,7 @@ Comprehensive metrics and performance visualization.
 
 ---
 
-**Note**: For live screenshots, visit the [GitHub repository](https://github.com/wojons/chess-ai-benchmark) to view all screenshots.
+**Note**: For live screenshots, visit [GitHub repository](https://github.com/wojons/chess-ai-benchmark) to view all screenshots.
 
 ### Core Features
 
@@ -47,6 +47,52 @@ Comprehensive metrics and performance visualization.
 - **Human-in-the-Loop**: Director controls for manual intervention, state editing, and prompt override
 - **Avant-Garde Brutalist UI**: High-fidelity dark mode with dual-layer battle feed (Whisper + Shout)
 - **Comprehensive Telemetry**: Real-time metrics for latency, token usage, error rates, and hallucination tracking
+
+## 🌐 CYBER-BRUTALIST DESIGN SYSTEM
+
+### Full Observatory View
+
+![Full Cyber-Brutalist Observatory](screenshots/cyber/full-observatory.png)
+
+The complete Cyber-Brutalist interface with three-panel layout showing:
+
+- **Left Panel**: Game Stage with "Grid of Light" and Director Controls
+- **Center Panel**: Battle Feed with Neural Stream (The Whisper + The Shout)
+- **Right Panel**: Telemetry metrics and performance data
+- **Mono-background-noise**: Character texture overlay (█ ▓ ▒ ░ ▒ ▓)
+- **Fluid Grid Layout**: Three-column responsive design
+- **Model Identity Colors**: Electric Cyan (Player 1) vs Neon Vermilion (Player 2)
+- **Terminal styling**: High-contrast, 1px borders, sharp corners
+
+### Telemetry Panel - Brutalist Dashboard
+
+![Telemetry Panel - Brutalist Dashboard](screenshots/cyber/telemetry-panel.png)
+
+Cyber-Brutalist telemetry interface showing:
+
+- **Player 1 & 2 Stats**: Requests, tokens, latency, errors
+- **Terminal styling**: High-contrast, 1px borders, sharp corners
+- **Color-coded metrics**: Electric Cyan (Player 1) and Neon Vermilion (Player 2)
+- **Performance graphs**: Token usage, latency tracking, error rates
+- **Mono character noise**: Subtle background texture for industrial aesthetic
+
+### Battle Feed - Neural Stream
+
+![Battle Feed - Neural Stream](screenshots/cyber/battle-feed-neural-stream.png)
+
+Dual-layer log system with Cyber-Brutalist styling:
+
+- **FEED / TELEMETRY tabs**: High-contrast toggle buttons with sharp corners
+- **The Whisper Layer**: 40% opacity, italic, monospace (internal AI monologue)
+- **The Shout Layer**: High-contrast, bold, brutalist boxes (public trash talk)
+- **Filter buttons**: For different log types (system, turn, move, thought, trash, hallucination, error, warning)
+- **Stats bar**: Moves, hallucinations with ghost white text
+- **Terminal aesthetic**: Monospace fonts, high-contrast colors
+- **Scanline effects**: Subtle gradient overlays
+
+---
+
+**Note**: For live screenshots, visit [GitHub repository](https://github.com/wojons/chess-ai-benchmark) to view all screenshots.
 
 ## 🏗️ Architecture
 
